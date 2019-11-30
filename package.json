@@ -13,12 +13,10 @@
     "test": "jest"
   },
   "lint-staged": {
-    "lint-staged": {
-      "*.{js,vue}": [
-        "eslint --fix",
-        "git add"
-      ]
-    }
+    "*.{js,vue}": [
+      "eslint --fix",
+      "git add"
+    ]
   },
   "dependencies": {
     "nuxt": "^2.0.0",
