@@ -3,20 +3,28 @@
   <div>
     <v-layout>
       <v-flex class="text-center">
-        <img src="/v.png" alt="Vuetify.js" class="mb-5" />
-        <blockquote class="blockquote">
-          &#8220;First, solve the problem. Then, write the code.&#8221;
-          <footer>
-            <small>
-              <em>&mdash;John Johnson</em>
-            </small>
-          </footer>
-        </blockquote>
+        <v-card color="orange darken-3" class="title">
+          <v-card-title primary-title class="white--text"
+            >過去の演奏</v-card-title
+          >
+        </v-card>
       </v-flex>
     </v-layout>
     <v-layout wrap>
-      <v-flex v-for="videoID in videoIDs" v-bind:key="videoID" xs12 sm6 md6>
-        <youtube :video-id="videoID" ref="youtube" fitParent></youtube>
+      <v-flex
+        v-for="info in videoInfo"
+        v-bind:key="info.id.videoId"
+        xs12
+        sm6
+        md6
+      >
+        <div class="youtube-videos">
+          <youtube
+            :video-id="info.id.videoId"
+            ref="youtube"
+            fitParent
+          ></youtube>
+        </div>
       </v-flex>
     </v-layout>
   </div>
@@ -35,7 +43,7 @@ export default {
   },
   data() {
     return {
-      videoIDs: [],
+      videoInfo: [],
       resp: null,
       apiKey: 'AIzaSyD7DsIYDle6E2Jaei0dbG4WWOgEcG6wMi4',
       channelID: 'UCZO1ukfvweX4_kBXd1iP43A',
@@ -63,11 +71,8 @@ export default {
         }
       })
       .then((response) => {
-        const videosInfo = response.items.filter(function(item) {
+        this.videoInfo = response.items.filter(function(item) {
           return 'videoId' in item.id
-        })
-        this.videoIDs = videosInfo.map(function(info) {
-          return info.id.videoId
         })
       })
   },
@@ -76,3 +81,9 @@ export default {
   }
 }
 </script>
+<style scoped>
+.youtube-videos {
+  margin: 10px;
+  padding: 5px;
+}
+</style>
