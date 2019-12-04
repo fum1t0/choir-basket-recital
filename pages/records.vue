@@ -45,7 +45,6 @@ export default {
     return {
       videoInfo: [],
       resp: null,
-      apiKey: 'AIzaSyD7DsIYDle6E2Jaei0dbG4WWOgEcG6wMi4',
       channelID: 'UCZO1ukfvweX4_kBXd1iP43A',
       maxItems: 9
     }
@@ -66,7 +65,7 @@ export default {
         params: {
           part: 'snippet',
           channelId: this.channelID,
-          key: this.apiKey,
+          key: process.env.API_KEY,
           maxResults: this.maxItems
         }
       })
