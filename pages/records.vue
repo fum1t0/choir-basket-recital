@@ -45,7 +45,7 @@ export default {
     return {
       videoInfo: [],
       resp: null,
-      apiKey: 'AIzaSyD7DsIYDle6E2Jaei0dbG4WWOgEcG6wMi4',
+      apiKey: process.env.API_KEY,
       channelID: 'UCZO1ukfvweX4_kBXd1iP43A',
       maxItems: 9
     }
