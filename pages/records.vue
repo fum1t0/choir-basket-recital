@@ -1,23 +1,11 @@
 /* eslint-disable prettier/prettier */
 <template>
   <div>
-    <v-layout>
-      <v-flex class="text-center">
-        <v-card color="orange darken-3" class="title">
-          <v-card-title primary-title class="white--text"
-            >過去の演奏</v-card-title
-          >
-        </v-card>
-      </v-flex>
-    </v-layout>
-    <v-layout wrap>
-      <v-flex
-        v-for="info in videoInfo"
-        v-bind:key="info.id.videoId"
-        xs12
-        sm6
-        md6
-      >
+    <v-card color="orange darken-3" class="title">
+      <v-card-title primary-title class="white--text">過去の演奏</v-card-title>
+    </v-card>
+    <v-row>
+      <v-col v-for="info in videoInfo" v-bind:key="info.id.videoId" cols="6">
         <div class="youtube-videos">
           <youtube
             :video-id="info.id.videoId"
@@ -25,8 +13,8 @@
             fitParent
           ></youtube>
         </div>
-      </v-flex>
-    </v-layout>
+      </v-col>
+    </v-row>
   </div>
 </template>
 
