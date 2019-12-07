@@ -30,9 +30,7 @@ export default {
   },
   data() {
     return {
-      videoInfo: [],
-      channelID: 'UCZO1ukfvweX4_kBXd1iP43A',
-      maxItems: 9
+      videoInfo: []
     }
   },
   methods: {
@@ -45,21 +43,23 @@ export default {
       return this.$refs.youtube.player
     }
   },
-  created: function() {
-    this.$axios
-      .$get('https://www.googleapis.com/youtube/v3/search', {
+  async asyncData() {
+    const videoInfo = await axios
+      .get('https://www.googleapis.com/youtube/v3/search', {
         params: {
           part: 'snippet',
-          channelId: this.channelID,
+          channelId: 'UCZO1ukfvweX4_kBXd1iP43A',
           key: process.env.API_KEY,
-          maxResults: this.maxItems
+          maxResults: 11
         }
       })
       .then((response) => {
-        this.videoInfo = response.items.filter(function(item) {
+        const filtered_info = response.data.items.filter(function(item) {
           return 'videoId' in item.id
         })
+        return filtered_info
       })
+    return { videoInfo: videoInfo }
   },
   props: {
     resize: true
@@ -68,7 +68,7 @@ export default {
 </script>
 <style scoped>
 .youtube-videos {
-  margin: 10px;
-  padding: 5px;
+  margin: 0px;
+  padding: 0px;
 }
 </style>
