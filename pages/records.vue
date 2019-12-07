@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 <template>
   <div>
     <v-card color="orange darken-3" class="title">
@@ -32,7 +31,6 @@ export default {
   data() {
     return {
       videoInfo: [],
-      resp: null,
       channelID: 'UCZO1ukfvweX4_kBXd1iP43A',
       maxItems: 9
     }
