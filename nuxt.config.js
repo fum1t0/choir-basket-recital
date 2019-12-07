@@ -1,12 +1,16 @@
 import colors from 'vuetify/es5/util/colors'
 
+require('dotenv').config()
+
+const { API_KEY } = process.env
+
 export default {
   mode: 'universal',
   /*
    ** Headers of the page
    */
   head: {
-    titleTemplate: '%s - ' + process.env.npm_package_name,
+    titleTemplate: '%s - ' + '合唱団ばすけ',
     title: process.env.npm_package_name || '',
     meta: [
       { charset: 'utf-8' },
@@ -58,7 +62,7 @@ export default {
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
-      dark: true,
+      dark: false,
       themes: {
         dark: {
           primary: colors.blue.darken2,
@@ -80,5 +84,8 @@ export default {
      ** You can extend webpack config here
      */
     extend(config, ctx) {}
+  },
+  env: {
+    API_KEY
   }
 }
