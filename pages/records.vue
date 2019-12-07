@@ -5,7 +5,7 @@
     </v-card>
     <v-row>
       <v-col v-for="info in videoInfo" v-bind:key="info.id.videoId" cols="6">
-        <div class="youtube-videos">
+        <div>
           <youtube
             :video-id="info.id.videoId"
             ref="youtube"
@@ -66,9 +66,3 @@ export default {
   }
 }
 </script>
-<style scoped>
-.youtube-videos {
-  margin: 0px;
-  padding: 0px;
-}
-</style>
