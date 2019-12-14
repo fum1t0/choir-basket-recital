@@ -1,19 +1,36 @@
 <template>
   <div>
-    <v-card color="orange darken-3" class="title">
-      <v-card-title primary-title class="white--text">過去の演奏</v-card-title>
-    </v-card>
-    <v-row>
-      <v-col v-for="info in videoInfo" v-bind:key="info.id.videoId" cols="6">
-        <div>
-          <youtube
-            :video-id="info.id.videoId"
-            ref="youtube"
-            fitParent
-          ></youtube>
-        </div>
-      </v-col>
+    <v-row align="start" justify="center">
+      <v-img src="IMG_1446.jpg">
+        <v-container>
+          <v-row align="center" justify="center">
+            <v-col cols="12">
+              <div class="title">HogeFugaPiyo</div>
+            </v-col>
+          </v-row>
+        </v-container>
+      </v-img>
     </v-row>
+    <v-container>
+      <v-row>
+        <v-col
+          v-for="info in videoInfo"
+          v-bind:key="info.id.videoId"
+          xl="4"
+          lg="6"
+          md="6"
+          cols="12"
+        >
+          <div>
+            <youtube
+              :video-id="info.id.videoId"
+              ref="youtube"
+              fitParent
+            ></youtube>
+          </div>
+        </v-col>
+      </v-row>
+    </v-container>
   </div>
 </template>
 
@@ -66,3 +83,12 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.title {
+  text-align: center;
+  color: #fcfcfc;
+  margin-top: 50%;
+  margin-bottom: 50%;
+}
+</style>
