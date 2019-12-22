@@ -14,19 +14,15 @@
     <v-container>
       <v-row>
         <v-col
-          v-for="info in videoInfo"
-          v-bind:key="info.id.videoId"
+          v-for="videoInfo in videoInfos"
+          v-bind:key="videoInfo.id"
           xl="4"
           lg="6"
           md="6"
           cols="12"
         >
           <div>
-            <youtube
-              :video-id="info.id.videoId"
-              ref="youtube"
-              fitParent
-            ></youtube>
+            <youtube :video-id="videoInfo.id" ref="youtube" fitParent></youtube>
           </div>
         </v-col>
       </v-row>
@@ -47,7 +43,46 @@ export default {
   },
   data() {
     return {
-      videoInfo: []
+      videoInfos: [
+        {
+          id: 'mAkZT5KPuiI',
+          title: 'かもめ　男声合唱組曲「中勘助の詩から」より　合唱団ばすけ'
+        },
+        {
+          id: 'uafxh1cn_t4',
+          title: '北の海鳥　男声合唱組曲「海鳥の詩」より　合唱団ばすけ'
+        },
+        {
+          id: 'kFu_x_cw9n0',
+          title: 'エトピリカ　男声合唱組曲「海鳥の詩」より　合唱団ばすけ'
+        },
+        {
+          id: 'Ligje2YhazU',
+          title: '波乗りジョニー　合唱団ばすけ'
+        },
+        {
+          id: 'LLbl0W2QOTk',
+          title:
+            '新しい時代に　男声合唱とピアノのための「わが詩友」より　合唱団ばすけ'
+        },
+        {
+          id: 'wf5Oo0WvXbk',
+          title:
+            '川よとわに美しく　男声合唱組曲「川よとわに美しく」より　合唱団ばすけ'
+        },
+        {
+          id: 'Xl40kp20RrM',
+          title: '夏の終わり 　合唱団ばすけ'
+        },
+        {
+          id: 'ZxNcJS6T_EA',
+          title: '数珠かけ鳩　男声合唱組曲「白き花鳥図」より　合唱団ばすけ'
+        },
+        {
+          id: 'Sqv-Yf-ehz0',
+          title: '黎明　男声合唱組曲「白き花鳥図」より　合唱団ばすけ'
+        }
+      ]
     }
   },
   methods: {
@@ -59,24 +94,6 @@ export default {
     player() {
       return this.$refs.youtube.player
     }
-  },
-  async asyncData() {
-    const videoInfo = await axios
-      .get('https://www.googleapis.com/youtube/v3/search', {
-        params: {
-          part: 'snippet',
-          channelId: 'UCZO1ukfvweX4_kBXd1iP43A',
-          key: process.env.API_KEY,
-          maxResults: 11
-        }
-      })
-      .then((response) => {
-        const filtered_info = response.data.items.filter(function(item) {
-          return 'videoId' in item.id
-        })
-        return filtered_info
-      })
-    return { videoInfo: videoInfo }
   },
   props: {
     resize: true
