@@ -65,11 +65,6 @@ export default {
       main_icon: 'mdi-basketball',
       linked_pages: [
         {
-          title: '合唱団ばすけとは',
-          link: '/about-basket',
-          icon: 'mdi-basketball'
-        },
-        {
           title: '演奏会のご案内',
           link: '/recital',
           icon: 'mdi-information-variant'
