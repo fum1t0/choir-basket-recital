@@ -1,15 +1,6 @@
 <template>
   <v-app dark>
-    <v-app-bar :clipped-left="clipped" fixed app>
-      <v-toolbar-title>
-        <router-link to="/" class="toolbar-title">{{ title }}</router-link>
-      </v-toolbar-title>
-      <v-toolbar-items>
-        <v-btn text to="/about-basket" nuxt>合唱団ばすけとは</v-btn>
-        <v-btn text to="/recital" nuxt>演奏会のご案内</v-btn>
-        <v-btn text to="/records" nuxt>過去の演奏</v-btn>
-      </v-toolbar-items>
-    </v-app-bar>
+    <navibar />
     <v-content>
       <nuxt />
     </v-content>
@@ -20,7 +11,12 @@
 </template>
 
 <script>
+import Navibar from '@/components/Navibar'
+
 export default {
+  components: {
+    Navibar
+  },
   data() {
     return {
       clipped: false,
@@ -46,10 +42,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.toolbar-title {
-  color: black;
-  text-decoration: none;
-}
-</style>
