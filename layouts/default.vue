@@ -4,7 +4,7 @@
     <v-content>
       <nuxt />
     </v-content>
-    <v-footer absolute flat app>
+    <v-footer absolute app>
       <span>&copy; 2019</span>
     </v-footer>
   </v-app>
