@@ -1,16 +1,10 @@
 <template>
   <div>
-    <v-row align="start" justify="center">
-      <v-img src="IMG_1446.jpg">
-        <v-container>
-          <v-row align="center" justify="center">
-            <v-col cols="12">
-              <div class="title">HogeFugaPiyo</div>
-            </v-col>
-          </v-row>
-        </v-container>
+    <v-container fluid>
+      <v-img src="IMG_1446.jpg" max-height="500">
+        <p class="title">HogeFugaPiyo</p>
       </v-img>
-    </v-row>
+    </v-container>
     <v-container>
       <v-row>
         <v-col
@@ -22,7 +16,13 @@
           cols="12"
         >
           <div>
-            <youtube :video-id="videoInfo.id" ref="youtube" fitParent></youtube>
+            <youtube
+              :video-id="videoInfo.id"
+              ref="youtube"
+              :width="300"
+              :height="180"
+              fitParent
+            ></youtube>
           </div>
         </v-col>
       </v-row>
@@ -102,10 +102,18 @@ export default {
 </script>
 
 <style scoped>
+.container--fluid {
+  padding: 0px;
+}
 .title {
-  text-align: center;
   color: #fcfcfc;
-  margin-top: 50%;
-  margin-bottom: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
 }
 </style>
