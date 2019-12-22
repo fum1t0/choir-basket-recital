@@ -4,7 +4,7 @@
     <v-content>
       <nuxt />
     </v-content>
-    <v-footer absolute app>
+    <v-footer absolute app color="#FAFAFA">
       <span>&copy; 2019</span>
     </v-footer>
   </v-app>
@@ -19,3 +19,12 @@ export default {
   }
 }
 </script>
+
+<style>
+.v-application {
+  font-family: 'M PLUS Rounded 1c';
+}
+.v-application.theme--light {
+  background-color: #fafafa;
+}
+</style>
