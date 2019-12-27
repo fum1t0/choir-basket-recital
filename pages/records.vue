@@ -32,11 +32,10 @@
 
 <script>
 import Vue from 'vue'
-import axios from 'axios'
 import VueYoutube from 'vue-youtube'
 
 Vue.use(VueYoutube)
-Vue.use(axios)
+
 export default {
   head() {
     return { title: '過去の演奏' }
