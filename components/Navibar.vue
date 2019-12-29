@@ -47,8 +47,8 @@ export default {
           icon: 'mdi-basketball'
         },
         {
-          title: { pc: '演奏会のご案内', sp: 'info' },
-          link: '/recital',
+          title: { pc: '演奏会のご案内', sp: 'concert' },
+          link: '/concert',
           icon: 'mdi-information-variant'
         },
         {
