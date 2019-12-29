@@ -4,9 +4,6 @@
     <v-content>
       <nuxt />
     </v-content>
-    <v-footer absolute app color="#FAFAFA">
-      <span>&copy; 2019</span>
-    </v-footer>
   </v-app>
 </template>
 
