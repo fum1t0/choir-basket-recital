@@ -2,7 +2,7 @@
   <div>
     <v-container fluid>
       <v-img src="IMG_1446.jpg" max-height="500">
-        <p class="title">HogeFugaPiyo</p>
+        <p class="header-title">過去の演奏</p>
       </v-img>
     </v-container>
     <v-container>
@@ -104,8 +104,11 @@ export default {
 .container--fluid {
   padding: 0px;
 }
-.title {
+.header-title {
   color: #fcfcfc;
+  font-family: 'M PLUS Rounded 1c';
+  font-weight: 700;
+  font-size: xx-large;
   position: absolute;
   top: 50%;
   left: 50%;
