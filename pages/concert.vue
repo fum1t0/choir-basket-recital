@@ -2,50 +2,73 @@
   <div>
     <v-container fluid>
       <v-img src="IMG_1446.jpg" max-height="500">
-        <p class="image-title display-3">
-          合唱団ばすけ
-          <br />5周年記念演奏会
+        <p class="image-title">
+          <span class="line-break">合唱団ばすけ</span>
+          <span class="line-break">5周年記念演奏会</span>
         </p>
       </v-img>
     </v-container>
     <v-container>
       <h1 class="main-title">
-        <span class="mr-4">合唱団ばすけ</span><span>5周年記念演奏会</span>
+        <span class="line-break">合唱団ばすけ</span
+        ><span class="line-break">５周年記念演奏会</span>
       </h1>
       <v-row>
-        <v-col lg="6" md="6" cols="12">
-          <v-card class="details">
+        <v-col cols="12">
+          <v-card class="details mb-4">
             <v-card-text>
               <h2>開催日程</h2>
-              <p>2020年2月23日</p>
+              <div>2020年2月23日</div>
               <p>
                 <span class="pr-2">開場&nbsp;16:00</span
                 ><span>開演&nbsp;16:30</span>
               </p>
               <h2>会場</h2>
               <p>
-                <span class="pr-2">早稲田奉仕園スコットホール</span
-                ><span>(東京都新宿区西早稲田2-3-1)</span>
+                <span class="mr-2 line-break">早稲田奉仕園スコットホール</span
+                ><span class="line-break">(東京都新宿区西早稲田2-3-1)</span>
               </p>
+              <h2>アクセス</h2>
+              <div>東京メトロ東西線&nbsp;早稲田駅より徒歩5分</div>
+              <div>または</div>
+              <div>東京メトロ副都心線&nbsp;西早稲田駅より徒歩8分</div>
+              <a href="https://www.hoshien.or.jp/"
+                >https://www.hoshien.or.jp/</a
+              >
+              <v-card>
+                <div class="google-map">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.7485058851025!2d139.71407491448812!3d35.70780598018814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188d1bfff8e65d%3A0x880c3c3d129851b5!2z5pep56iy55Sw5aWJ5LuV5ZySIOOCueOCs-ODg-ODiOODm-ODvOODqw!5e0!3m2!1sja!2sjp!4v1577465807042!5m2!1sja!2sjp"
+                    width="100%"
+                    height="auto"
+                    frameborder="0"
+                    style="border:0;"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+              </v-card>
+            </v-card-text>
+          </v-card>
+        </v-col>
+        <v-col cols="12">
+          <v-card class="details mb-4">
+            <v-card-text>
               <h2>プログラム</h2>
               <div v-for="stage in stages" :key="stage.title">
-                <h3>{{ stage.stage_title }}</h3>
+                <h3 class="hidden-sm-and-down">
+                  <span class="mr-2">{{ stage.stage_order }}</span
+                  ><span>{{ stage.stage_title }}</span>
+                </h3>
+                <h3 class="hidden-md-and-up">
+                  <div>{{ stage.stage_order }}</div>
+                  <div>{{ stage.stage_title }}</div>
+                </h3>
                 <ul>
                   <li v-for="song in stage.songs" :key="song">{{ song }}</li>
                 </ul>
               </div>
             </v-card-text>
           </v-card>
-        </v-col>
-        <v-col lg="6" md="6" cols="12">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.7485058851025!2d139.71407491448812!3d35.70780598018814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188d1bfff8e65d%3A0x880c3c3d129851b5!2z5pep56iy55Sw5aWJ5LuV5ZySIOOCueOCs-ODg-ODiOODm-ODvOODqw!5e0!3m2!1sja!2sjp!4v1577465807042!5m2!1sja!2sjp"
-            width="600"
-            height="450"
-            frameborder="0"
-            style="border:0;"
-            allowfullscreen
-          ></iframe>
         </v-col>
       </v-row>
     </v-container>
@@ -59,11 +82,13 @@ export default {
     return {
       stages: [
         {
-          stage_title: '1st Stage 多田武彦男声合唱曲集より',
+          stage_order: '1st Stage',
+          stage_title: '多田武彦男声合唱曲集より',
           songs: ['鐘鳴りぬ', 'さくら散る', '柳川']
         },
         {
-          stage_title: '2nd Stage アラカルトステージ',
+          stage_order: '2nd Stage',
+          stage_title: 'アラカルトステージ',
           songs: [
             '初心のうた',
             'ブルー',
@@ -73,7 +98,8 @@ export default {
           ]
         },
         {
-          stage_title: '3rd Stage 男声合唱曲「季節へのまなざし」',
+          stage_order: '3rd Stage',
+          stage_title: '男声合唱曲「季節へのまなざし」',
           songs: ['ひらく', 'のびる', 'みのる', 'ゆめみる']
         }
       ]
@@ -105,10 +131,28 @@ export default {
 }
 .flyer {
   margin: 0 auto;
-  width: 50vw;
+  width: 80vw;
   height: auto;
+}
+.google-map {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding-top: 75%;
+  margin-top: 1em;
+}
+.google-map iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.line-break {
+  display: inline-block;
 }
 ul {
   list-style: none;
+  padding: 0;
 }
 </style>
