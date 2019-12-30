@@ -72,9 +72,83 @@
                   <div>{{ stage.stage_order }}</div>
                   <div>{{ stage.stage_title }}</div>
                 </h3>
-                <p class="mb-0" v-for="song in stage.songs" :key="song.title">
-                  {{ song.title }}
-                </p>
+                <v-row v-if="stage.stage_order != '2nd Stage'">
+                  <v-col
+                    v-for="song in stage.songs"
+                    :key="song.title"
+                    :xl="Math.floor(12 / stage.songs.length)"
+                    :lg="Math.floor(12 / stage.songs.length)"
+                    :md="Math.floor(12 / stage.songs.length)"
+                    cols="12"
+                  >
+                    <v-card class="mb-0">
+                      <v-card-text>
+                        <h4>{{ song.title }}</h4>
+                        <p class="mb-0">
+                          <span class="mr-1 line-break"
+                            >作詞: {{ song.lyric }}</span
+                          ><span class="line-break"
+                            >作曲: {{ song.composer }}</span
+                          >
+                        </p>
+                        <p class="mb-0">
+                          指揮: えも
+                        </p>
+                      </v-card-text>
+                    </v-card>
+                  </v-col>
+                </v-row>
+                <v-row v-if="stage.stage_order == '2nd Stage'">
+                  <v-col
+                    v-for="song in stage.songs.slice(0, 3)"
+                    :key="song.title"
+                    :xl="4"
+                    :lg="4"
+                    :md="4"
+                    cols="12"
+                    ><v-card class="mb-0"
+                      ><v-card-text>
+                        <h4>{{ song.title }}</h4>
+                        <p class="mb-0">
+                          <span class="mr-1 line-break"
+                            >作詞: {{ song.lyric }}</span
+                          ><span class="line-break"
+                            >作曲: {{ song.composer }}</span
+                          >
+                        </p>
+                        <p class="mb-0">
+                          指揮: えも
+                        </p>
+                      </v-card-text></v-card
+                    >
+                  </v-col>
+                </v-row>
+                <v-row v-if="stage.stage_order == '2nd Stage'">
+                  <v-col
+                    v-for="song in stage.songs.slice(3)"
+                    :key="song.title"
+                    :xl="4"
+                    :lg="4"
+                    :md="4"
+                    cols="12"
+                  >
+                    <v-card class="mb-0"
+                      ><v-card-text>
+                        <h4>{{ song.title }}</h4>
+                        <p class="mb-0">
+                          <span class="mr-1 line-break"
+                            >作詞: {{ song.lyric }}</span
+                          ><span class="line-break"
+                            >作曲: {{ song.composer }}</span
+                          >
+                        </p>
+                        <p class="mb-0">
+                          指揮: えも
+                        </p>
+                      </v-card-text></v-card
+                    >
+                  </v-col>
+                </v-row>
               </div>
             </v-card-text>
           </v-card>
@@ -172,6 +246,9 @@ export default {
 }
 .line-break {
   display: inline-block;
+}
+.second-stage-card {
+  padding: 0 20%;
 }
 ul {
   list-style: none;
