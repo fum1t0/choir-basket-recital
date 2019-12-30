@@ -15,15 +15,18 @@
           md="6"
           cols="12"
         >
-          <div>
+          <v-card>
+            <v-card-title>{{ videoInfo.title }}</v-card-title>
+            <v-card-subtitle>{{ videoInfo.subtitle }}</v-card-subtitle>
             <youtube
               :video-id="videoInfo.id"
               ref="youtube"
               :width="300"
-              :height="180"
+              :height="130"
               fitParent
             ></youtube>
-          </div>
+            <v-card-text>{{ videoInfo.description }}</v-card-text>
+          </v-card>
         </v-col>
       </v-row>
     </v-container>
@@ -35,7 +38,6 @@ import Vue from 'vue'
 import VueYoutube from 'vue-youtube'
 
 Vue.use(VueYoutube)
-
 export default {
   head() {
     return { title: '過去の演奏' }
@@ -45,41 +47,57 @@ export default {
       videoInfos: [
         {
           id: 'mAkZT5KPuiI',
-          title: 'かもめ　男声合唱組曲「中勘助の詩から」より　合唱団ばすけ'
+          title: 'かもめ',
+          subtitle: '作詩：中勘助　作曲：多田武彦',
+          description: 'ウォウウォウイェイイェイ'
         },
         {
           id: 'uafxh1cn_t4',
-          title: '北の海鳥　男声合唱組曲「海鳥の詩」より　合唱団ばすけ'
+          title: '北の海鳥',
+          subtitle: '作詩：更科源蔵　作曲：廣瀬量平',
+          description: 'りえちゃんすごい'
         },
         {
           id: 'kFu_x_cw9n0',
-          title: 'エトピリカ　男声合唱組曲「海鳥の詩」より　合唱団ばすけ'
+          title: 'エトピリカ',
+          subtitle: '作詩：更科源蔵　作曲：廣瀬量平',
+          description: 'りえちゃんすごい'
         },
         {
           id: 'Ligje2YhazU',
-          title: '波乗りジョニー　合唱団ばすけ'
+          title: '波乗りジョニー',
+          subtitle: '作詩：桑田佳祐　編曲：野呂洸碩',
+          description: 'のろにきすごい'
         },
         {
           id: 'LLbl0W2QOTk',
-          title:
-            '新しい時代に　男声合唱とピアノのための「わが詩友」より　合唱団ばすけ'
+          title: '新しい時代に',
+          subtitle: '作詩：丸山薫　作曲：信長貴富',
+          description: 'いい感じにやった'
         },
         {
           id: 'wf5Oo0WvXbk',
-          title:
-            '川よとわに美しく　男声合唱組曲「川よとわに美しく」より　合唱団ばすけ'
+          title: '川よとわに美しく',
+          subtitle: '作詩：米田栄作　作曲：三枝成彰',
+          description: 'ありお砲は必聴'
         },
         {
           id: 'Xl40kp20RrM',
-          title: '夏の終わり 　合唱団ばすけ'
+          title: '夏の終わり',
+          subtitle: '作詩：森山直太朗 / 御徒町凪　編曲：田中達也',
+          description: '8月なのでまだ夏真っ盛り'
         },
         {
           id: 'ZxNcJS6T_EA',
-          title: '数珠かけ鳩　男声合唱組曲「白き花鳥図」より　合唱団ばすけ'
+          title: '数珠かけ鳩',
+          subtitle: '作詩：北原白秋　作曲：多田武彦',
+          description: '数珠かけ鳩はムキムキに'
         },
         {
           id: 'Sqv-Yf-ehz0',
-          title: '黎明　男声合唱組曲「白き花鳥図」より　合唱団ばすけ'
+          title: '黎明',
+          subtitle: '作詩：北原白秋　作曲：多田武彦',
+          description: 'ウォウウォウイェイイェイ'
         }
       ]
     }
