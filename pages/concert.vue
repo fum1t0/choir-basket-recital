@@ -14,7 +14,7 @@
         ><span class="line-break">５周年記念演奏会</span>
       </h1>
       <v-row>
-        <v-col xl="4" lg="4" md="4" cols="12">
+        <v-col xl="6" lg="6" md="6" cols="12">
           <v-card class="details mb-4">
             <v-card-text>
               <h2>開催日程</h2>
@@ -34,7 +34,7 @@
                 ><span class="line-break">早稲田駅より徒歩5分</span>
               </p>
               <p class="mb-1">または</p>
-              <p class="mb-0">
+              <p class="mb-1">
                 <span class="mr-1 line-break">東京メトロ副都心線</span
                 ><span class="line-break">西早稲田駅より徒歩8分</span>
               </p>
@@ -56,7 +56,7 @@
             </v-card-text>
           </v-card>
         </v-col>
-        <v-col xl="8" lg="8" md="8" cols="12">
+        <v-col xl="6" lg="6" md="6" cols="12">
           <v-card class="details mb-4">
             <v-card-text>
               <h2>プログラム</h2>
@@ -72,83 +72,20 @@
                   <div>{{ stage.stage_order }}</div>
                   <div>{{ stage.stage_title }}</div>
                 </h3>
-                <v-row v-if="stage.stage_order != '2nd Stage'">
-                  <v-col
-                    v-for="song in stage.songs"
-                    :key="song.title"
-                    :xl="Math.floor(12 / stage.songs.length)"
-                    :lg="Math.floor(12 / stage.songs.length)"
-                    :md="Math.floor(12 / stage.songs.length)"
-                    cols="12"
-                  >
-                    <v-card class="mb-0">
-                      <v-card-text>
-                        <h4>{{ song.title }}</h4>
-                        <p class="mb-0">
-                          <span class="mr-1 line-break"
-                            >作詞: {{ song.lyric }}</span
-                          ><span class="line-break"
-                            >作曲: {{ song.composer }}</span
-                          >
-                        </p>
-                        <p class="mb-0">
-                          指揮: えも
-                        </p>
-                      </v-card-text>
-                    </v-card>
-                  </v-col>
-                </v-row>
-                <v-row v-if="stage.stage_order == '2nd Stage'">
-                  <v-col
-                    v-for="song in stage.songs.slice(0, 3)"
-                    :key="song.title"
-                    :xl="4"
-                    :lg="4"
-                    :md="4"
-                    cols="12"
-                    ><v-card class="mb-0"
-                      ><v-card-text>
-                        <h4>{{ song.title }}</h4>
-                        <p class="mb-0">
-                          <span class="mr-1 line-break"
-                            >作詞: {{ song.lyric }}</span
-                          ><span class="line-break"
-                            >作曲: {{ song.composer }}</span
-                          >
-                        </p>
-                        <p class="mb-0">
-                          指揮: えも
-                        </p>
-                      </v-card-text></v-card
-                    >
-                  </v-col>
-                </v-row>
-                <v-row v-if="stage.stage_order == '2nd Stage'">
-                  <v-col
-                    v-for="song in stage.songs.slice(3)"
-                    :key="song.title"
-                    :xl="4"
-                    :lg="4"
-                    :md="4"
-                    cols="12"
-                  >
-                    <v-card class="mb-0"
-                      ><v-card-text>
-                        <h4>{{ song.title }}</h4>
-                        <p class="mb-0">
-                          <span class="mr-1 line-break"
-                            >作詞: {{ song.lyric }}</span
-                          ><span class="line-break"
-                            >作曲: {{ song.composer }}</span
-                          >
-                        </p>
-                        <p class="mb-0">
-                          指揮: えも
-                        </p>
-                      </v-card-text></v-card
-                    >
-                  </v-col>
-                </v-row>
+                <div class="mb-1">
+                  <div v-for="song in stage.songs" :key="song.title">
+                    <v-row>
+                      <v-col cols="6">{{ song.title }}</v-col>
+                      <v-col cols="6"
+                        ><span class="mr-1 line-break"
+                          >作詞: {{ song.lyric }}</span
+                        ><span class="mr-1 line-break"
+                          >作曲: {{ song.composer }}</span
+                        ></v-col
+                      >
+                    </v-row>
+                  </div>
+                </div>
               </div>
             </v-card-text>
           </v-card>
