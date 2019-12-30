@@ -14,7 +14,7 @@
         ><span class="line-break">５周年記念演奏会</span>
       </h1>
       <v-row>
-        <v-col cols="12">
+        <v-col xl="6" lg="6" md="6" cols="12">
           <v-card class="details mb-4">
             <v-card-text>
               <h2>開催日程</h2>
@@ -50,7 +50,7 @@
             </v-card-text>
           </v-card>
         </v-col>
-        <v-col cols="12">
+        <v-col xl="6" lg="6" md="6" cols="12">
           <v-card class="details mb-4">
             <v-card-text>
               <h2>プログラム</h2>
@@ -64,7 +64,14 @@
                   <div>{{ stage.stage_title }}</div>
                 </h3>
                 <ul>
-                  <li v-for="song in stage.songs" :key="song">{{ song }}</li>
+                  <li v-for="song in stage.songs" :key="song.title">
+                    <span>{{ song.title }}</span
+                    ><span v-if="'composer' in song"
+                      >&nbsp;（作詞:{{ song.lyric }}&nbsp; 作曲:{{
+                        song.composer
+                      }}）</span
+                    >
+                  </li>
                 </ul>
               </div>
             </v-card-text>
@@ -84,23 +91,36 @@ export default {
         {
           stage_order: '1st Stage',
           stage_title: '多田武彦男声合唱曲集より',
-          songs: ['鐘鳴りぬ', 'さくら散る', '柳川']
+          songs: [
+            { title: '鐘鳴りぬ', composer: '多田武彦', lyric: '三好達治' },
+            { title: 'さくら散る', composer: '多田武彦', lyric: '草野心平' },
+            { title: '柳川', composer: '多田武彦', lyric: '北原白秋' }
+          ]
         },
         {
           stage_order: '2nd Stage',
           stage_title: 'アラカルトステージ',
           songs: [
-            '初心のうた',
-            'ブルー',
-            'みょうが',
-            'カウボーイポップ',
-            '輪舞'
+            { title: '初心のうた', composer: '信長貴富', lyric: '木島始' },
+            { title: 'ブルー', composer: '北川昇', lyric: 'みなづきみのり' },
+            { title: 'みょうが', composer: '新実徳英', lyric: '星野富弘' },
+            {
+              title: 'カウボーイ・ポップ',
+              composer: '信長貴富',
+              lyric: '寺山修司'
+            },
+            { title: '輪舞', composer: '清水脩', lyric: '近藤鏡二郎' }
           ]
         },
         {
           stage_order: '3rd Stage',
           stage_title: '男声合唱曲「季節へのまなざし」',
-          songs: ['ひらく', 'のびる', 'みのる', 'ゆめみる']
+          songs: [
+            { title: 'ひらく', composer: '荻久保和明', lyric: '伊藤海彦' },
+            { title: 'のびる', composer: '荻久保和明', lyric: '伊藤海彦' },
+            { title: 'みのる', composer: '荻久保和明', lyric: '伊藤海彦' },
+            { title: 'ゆめみる', composer: '荻久保和明', lyric: '伊藤海彦' }
+          ]
         }
       ]
     }
