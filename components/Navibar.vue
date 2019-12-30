@@ -49,7 +49,7 @@ export default {
         {
           title: { pc: '演奏会のご案内', sp: 'concert' },
           link: '/concert',
-          icon: 'mdi-information-variant'
+          icon: 'mdi-music-clef-treble'
         },
         {
           title: { pc: '過去の演奏', sp: 'records' },
