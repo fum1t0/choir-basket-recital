@@ -14,7 +14,7 @@
         ><span class="line-break">５周年記念演奏会</span>
       </h1>
       <v-row>
-        <v-col xl="6" lg="6" md="6" cols="12">
+        <v-col xl="4" lg="4" md="4" cols="12">
           <v-card class="details mb-4">
             <v-card-text>
               <h2>開催日程</h2>
@@ -25,13 +25,19 @@
               </p>
               <h2>会場</h2>
               <p>
-                <span class="mr-2 line-break">早稲田奉仕園スコットホール</span
+                <span class="mr-1 line-break">早稲田奉仕園スコットホール</span
                 ><span class="line-break">(東京都新宿区西早稲田2-3-1)</span>
               </p>
               <h2>アクセス</h2>
-              <div>東京メトロ東西線&nbsp;早稲田駅より徒歩5分</div>
-              <div>または</div>
-              <div>東京メトロ副都心線&nbsp;西早稲田駅より徒歩8分</div>
+              <p class="mb-1">
+                <span class="mr-1 line-break">東京メトロ東西線</span
+                ><span class="line-break">早稲田駅より徒歩5分</span>
+              </p>
+              <p class="mb-1">または</p>
+              <p class="mb-0">
+                <span class="mr-1 line-break">東京メトロ副都心線</span
+                ><span class="line-break">西早稲田駅より徒歩8分</span>
+              </p>
               <a href="https://www.hoshien.or.jp/"
                 >https://www.hoshien.or.jp/</a
               >
@@ -50,29 +56,25 @@
             </v-card-text>
           </v-card>
         </v-col>
-        <v-col xl="6" lg="6" md="6" cols="12">
+        <v-col xl="8" lg="8" md="8" cols="12">
           <v-card class="details mb-4">
             <v-card-text>
               <h2>プログラム</h2>
-              <div v-for="stage in stages" :key="stage.title">
+              <div
+                class="mb-1"
+                v-for="stage in stages"
+                :key="stage.stage_title"
+              >
                 <h3 class="hidden-sm-and-down">
-                  <span class="mr-2">{{ stage.stage_order }}</span
-                  ><span>{{ stage.stage_title }}</span>
+                  {{ stage.stage_order }}&nbsp;{{ stage.stage_title }}
                 </h3>
                 <h3 class="hidden-md-and-up">
                   <div>{{ stage.stage_order }}</div>
                   <div>{{ stage.stage_title }}</div>
                 </h3>
-                <ul>
-                  <li v-for="song in stage.songs" :key="song.title">
-                    <span>{{ song.title }}</span
-                    ><span v-if="'composer' in song"
-                      >&nbsp;（作詞:{{ song.lyric }}&nbsp; 作曲:{{
-                        song.composer
-                      }}）</span
-                    >
-                  </li>
-                </ul>
+                <p class="mb-0" v-for="song in stage.songs" :key="song.title">
+                  {{ song.title }}
+                </p>
               </div>
             </v-card-text>
           </v-card>
