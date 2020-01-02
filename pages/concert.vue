@@ -15,7 +15,7 @@
       </h1>
       <v-row>
         <v-col xl="6" lg="6" md="6" cols="12">
-          <v-card class="details mb-4">
+          <v-card class="details mb-4" height="100%">
             <v-card-text>
               <h2>開催日程</h2>
               <div>2020年2月23日</div>
@@ -57,7 +57,7 @@
           </v-card>
         </v-col>
         <v-col xl="6" lg="6" md="6" cols="12">
-          <v-card class="details mb-4">
+          <v-card class="details mb-4" height="100%">
             <v-card-text>
               <h2>プログラム</h2>
               <div
@@ -75,8 +75,10 @@
                 <div class="mb-1">
                   <div v-for="song in stage.songs" :key="song.title">
                     <v-row>
-                      <v-col cols="6">{{ song.title }}</v-col>
-                      <v-col cols="6"
+                      <v-col cols="6" class="pa-1"
+                        ><p>{{ song.title }}</p></v-col
+                      >
+                      <v-col cols="6" class="pa-1"
                         ><span class="mr-1 line-break"
                           >作詞: {{ song.lyric }}</span
                         ><span class="mr-1 line-break"
@@ -92,7 +94,12 @@
         </v-col>
       </v-row>
     </v-container>
-    <div class="flyer"><v-img src="recital_flyer.jfif"></v-img></div>
+    <div class="hidden-md-and-up flyer-sp mt-0 mb-5">
+      <v-img src="recital_flyer.jfif"></v-img>
+    </div>
+    <div class="hidden-sm-and-down flyer-pc mt-0 mb-5">
+      <v-img src="recital_flyer.jfif"></v-img>
+    </div>
   </div>
 </template>
 
@@ -162,9 +169,14 @@ export default {
 .details {
   text-align: center;
 }
-.flyer {
+.flyer-pc {
   margin: 0 auto;
-  width: 80vw;
+  width: 40%;
+  height: auto;
+}
+.flyer-sp {
+  margin: 0 auto;
+  width: 80%;
   height: auto;
 }
 .google-map {
