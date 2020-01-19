@@ -8,9 +8,9 @@
         max-height="500"
       >
         <p class="header-title">
-          <span>合唱団ばすけ</span>
+          <span class="pc-title hidden-sm-and-down">合唱団ばすけとは</span>
+          <span class="sp-title hidden-md-and-up">合唱団ばすけ</span>
           <br class="hidden-md-and-up" />
-          <span class="pc-title hidden-sm-and-down">とは</span>
           <span class="sp-title hidden-md-and-up">とは</span>
         </p>
       </v-img>
@@ -120,7 +120,7 @@ export default {
   margin: 0;
   padding: 0;
 }
-.header-title .sp-title {
+.header-title .sp-title:last-of-type {
   padding: 23.5px 47px;
 }
 .subtitle {
