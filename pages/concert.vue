@@ -75,7 +75,7 @@
                   <div v-for="song in stage.songs" :key="song.title">
                     <v-row class="songs">
                       <v-col cols="6" class="pa-1"
-                        ><p>{{ song.title }}</p></v-col
+                        ><p class="song-title">{{ song.title }}</p></v-col
                       >
                       <v-col cols="6" class="pa-1"
                         ><span class="mr-1 line-break"
@@ -208,6 +208,9 @@ export default {
 .line-break {
   display: inline-block;
 }
+.song-title {
+  word-break: keep-all;
+}
 .stage-title {
   padding-bottom: 10px;
 }
@@ -215,7 +218,7 @@ export default {
   padding-top: 15px;
 }
 .stage-titles {
-  padding-top: 20px;
+  padding-top: 25px;
 }
 ul {
   list-style: none;
