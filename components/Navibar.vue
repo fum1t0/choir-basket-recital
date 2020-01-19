@@ -43,7 +43,7 @@ export default {
       linked_pages: [
         {
           title: { pc: '合唱団ばすけとは', sp: 'about' },
-          link: '/about-basket',
+          link: '/',
           icon: 'mdi-basketball'
         },
         {
