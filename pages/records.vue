@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-container fluid>
-      <v-img src="IMG_1446.jpg" max-height="500">
+      <v-img src="headerpic3.png" max-height="500">
         <p class="header-title">過去の演奏</p>
       </v-img>
     </v-container>
@@ -18,14 +18,17 @@
           <v-card>
             <v-card-title>{{ videoInfo.title }}</v-card-title>
             <v-card-subtitle>{{ videoInfo.subtitle }}</v-card-subtitle>
-            <youtube
-              :video-id="videoInfo.id"
-              ref="youtube"
-              :width="300"
-              :height="130"
-              fitParent
-            ></youtube>
-            <v-card-text>{{ videoInfo.description }}</v-card-text>
+            <v-card-text>
+              <div>
+                <youtube
+                  :video-id="videoInfo.id"
+                  ref="youtube"
+                  :width="300"
+                  :height="130"
+                  fitParent
+                ></youtube>
+              </div>
+            </v-card-text>
           </v-card>
         </v-col>
       </v-row>
@@ -48,56 +51,47 @@ export default {
         {
           id: 'mAkZT5KPuiI',
           title: 'かもめ',
-          subtitle: '作詩：中勘助　作曲：多田武彦',
-          description: 'ウォウウォウイェイイェイ'
+          subtitle: '作詩：中勘助　作曲：多田武彦'
         },
         {
           id: 'uafxh1cn_t4',
           title: '北の海鳥',
-          subtitle: '作詩：更科源蔵　作曲：廣瀬量平',
-          description: 'りえちゃんすごい'
+          subtitle: '作詩：更科源蔵　作曲：廣瀬量平'
         },
         {
           id: 'kFu_x_cw9n0',
           title: 'エトピリカ',
-          subtitle: '作詩：更科源蔵　作曲：廣瀬量平',
-          description: 'りえちゃんすごい'
+          subtitle: '作詩：更科源蔵　作曲：廣瀬量平'
         },
         {
           id: 'Ligje2YhazU',
           title: '波乗りジョニー',
-          subtitle: '作詩：桑田佳祐　編曲：野呂洸碩',
-          description: 'のろにきすごい'
+          subtitle: '作詩：桑田佳祐　編曲：野呂洸碩'
         },
         {
           id: 'LLbl0W2QOTk',
           title: '新しい時代に',
-          subtitle: '作詩：丸山薫　作曲：信長貴富',
-          description: 'いい感じにやった'
+          subtitle: '作詩：丸山薫　作曲：信長貴富'
         },
         {
           id: 'wf5Oo0WvXbk',
           title: '川よとわに美しく',
-          subtitle: '作詩：米田栄作　作曲：三枝成彰',
-          description: 'ありお砲は必聴'
+          subtitle: '作詩：米田栄作　作曲：三枝成彰'
         },
         {
           id: 'Xl40kp20RrM',
           title: '夏の終わり',
-          subtitle: '作詩：森山直太朗 / 御徒町凪　編曲：田中達也',
-          description: '8月なのでまだ夏真っ盛り'
+          subtitle: '作詩：森山直太朗 / 御徒町凪　編曲：田中達也'
         },
         {
           id: 'ZxNcJS6T_EA',
           title: '数珠かけ鳩',
-          subtitle: '作詩：北原白秋　作曲：多田武彦',
-          description: '数珠かけ鳩はムキムキに'
+          subtitle: '作詩：北原白秋　作曲：多田武彦'
         },
         {
           id: 'Sqv-Yf-ehz0',
           title: '黎明',
-          subtitle: '作詩：北原白秋　作曲：多田武彦',
-          description: 'ウォウウォウイェイイェイ'
+          subtitle: '作詩：北原白秋　作曲：多田武彦'
         }
       ]
     }
@@ -126,7 +120,7 @@ export default {
   color: #fcfcfc;
   font-family: 'M PLUS Rounded 1c';
   font-weight: 700;
-  font-size: xx-large;
+  font-size: x-large;
   position: absolute;
   top: 50%;
   left: 50%;
