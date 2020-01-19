@@ -58,7 +58,7 @@
           <p class="section-title">連絡先</p>
           <p>
             連絡は
-            <a href="mailto:choirbasuke@gmail.com">choirbasuke@gmail.com</a>
+            <a :href="'mailto:' + mail">{{ mail }}</a>
             にお願いします。
           </p>
         </v-col>
@@ -71,6 +71,7 @@
 export default {
   data() {
     return {
+      mail: 'choirbasuke@gmail.com',
       members: [
         {
           name: '戸倉晋之介',
