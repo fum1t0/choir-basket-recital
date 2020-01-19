@@ -15,94 +15,96 @@
         </p>
       </v-img>
     </v-container>
-    <v-container>
-      <p class="section-title">団長挨拶</p>
-      <div class="explession othercontents">
-        <img
-          src="../components/figures/basketball.png"
-          alt="バスケットボールだよ"
-          class="pictures"
-        />
-        <p class="extext">
-          合唱団ばすけは、早稲田大学合唱団のOBが集まって結成された男声合唱団です。
-        </p>
-        <p class="extext">
-          主に東京都合唱祭や男声合唱フェスティバル、野外合唱コンサートなどでの演奏を目指して活動しています。
-        </p>
-      </div>
-
-      <v-row class="mb-10" justify="center">
+    <v-container class="sections">
+      <v-row class="mb-10 section">
         <v-col xl="12" lg="12" md="12" cols="12">
-          <h1 class="section-title">団員紹介</h1>
+          <p class="section-title">団長挨拶</p>
         </v-col>
-        <v-col xl="4" lg="4" md="4" cols="12">
-          <div class="explession">
-            <h2 class="position">団長</h2>
-            <h2 class="names">戸倉しんちゃん</h2>
-            <img
-              src="../components/figures/sin.jpg"
-              alt="とくらさんの画像だよ"
-              class="pictures"
-              id="sin"
-            />
-            <p class="extext">
-              戸倉さんはすごいんだぞウホウホウホウホウホウホウホウホ
+        <v-col xl="12" lg="12" md="12" cols="12">
+          <div class="explession othercontents">
+            <p>
+              合唱団ばすけは、早稲田大学合唱団のOBが集まって結成された男声合唱団です。
+            </p>
+            <p>
+              主に東京都合唱祭や男声合唱フェスティバル、野外合唱コンサートなどでの演奏を目指して活動しています。
             </p>
           </div>
         </v-col>
-        <v-col xl="4" lg="4" md="4" cols="12">
-          <div class="explession">
-            <h2 class="position">指揮者</h2>
-            <h2 class="names">川崎えももん</h2>
-            <img
-              src="../components/figures/emo.jpg"
-              alt="えもさんの画像だよ"
-              class="pictures"
-            />
-            <p class="extext">
-              えもさんはすごいんだぞウホウホウホウホウホウホウホウホ
-            </p>
-          </div>
+      </v-row>
+
+      <v-row class="mb-10 section" justify="center">
+        <v-col xl="12" lg="12" md="12" cols="12">
+          <p class="section-title">団員紹介</p>
         </v-col>
-        <v-col xl="4" lg="4" md="4" cols="12">
-          <div class="explession">
-            <h2 class="position">ピアニスト</h2>
-            <h2 class="names">吉田りえ神</h2>
-            <img
-              src="../components/figures/rie.jpg"
-              alt="りえさんの画像だよ"
-              class="pictures"
-            />
-            <p class="extext">りえさんはすごい</p>
-          </div>
+        <v-col
+          xl="4"
+          lg="4"
+          md="4"
+          cols="12"
+          v-for="member in members"
+          :key="member.name"
+        >
+          <v-card height="100%">
+            <v-img :src="member.img" />
+            <v-card-title>{{ member.name }}</v-card-title>
+            <v-card-subtitle>{{ member.position }}</v-card-subtitle>
+            <v-card-text>{{ member.about }}</v-card-text>
+          </v-card>
         </v-col>
       </v-row>
 
       <v-row class="mb-10" justify="center">
         <v-col xl="12" lg="12" md="12" cols="12">
-          <div class="explession othercontents">
-            <h1 class="subtitle">連絡先</h1>
-            <img
-              src="../components/figures/postit.jpg"
-              alt="ポストイットだよ"
-              class="pictures"
-            />
-            <p class="extext">
-              これが連絡先だけど団員受け付けてないから連絡してくんなよ
-            </p>
-          </div>
+          <p class="section-title">連絡先</p>
+          <p>
+            連絡は
+            <a href="mailto:choirbasuke@gmail.com">choirbasuke@gmail.com</a>
+            にお願いします。
+          </p>
         </v-col>
       </v-row>
     </v-container>
   </div>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      members: [
+        {
+          name: '戸倉晋之介',
+          img: 'sin.jpg',
+          position: '団長',
+          about:
+            '独特の空気でばすけの雰囲気を作ってくれる団長。歌の安定感は超一流。滑り笑いの安定感も超一流。'
+        },
+        {
+          name: '川崎萌子',
+          img: 'emo.jpg',
+          position: '指揮者',
+          about:
+            '普段見せるのほほんとした顔とは一変、指揮をする姿は俊敏でパワフル。歌声も指揮も食べっぷりも元気もりもり。'
+        },
+        {
+          name: '吉田梨絵',
+          img: 'rie.jpg',
+          position: 'ピアニスト',
+          about:
+            '合唱団の天使！そのピアノの音色を聞けばあなたもりえちゃんのとりこに？'
+        }
+      ]
+    }
+  }
+}
+</script>
+
 <style scoped>
 .container--fluid {
   padding: 0px;
 }
 .header-img {
-  margin: 0 0 40px 0;
+  margin: 0 0 30px 0;
 }
 .header-title {
   color: #fcfcfc;
@@ -126,13 +128,6 @@
   font-weight: 400;
   font-size: 40px;
 }
-.exploession {
-  align-content: center;
-}
-.othercontents {
-  width: 70%;
-  margin: auto;
-}
 .position {
   font-weight: normal;
   font-size: 20px;
@@ -155,16 +150,17 @@
   position: absolute;
   top: 0;
 }
-.extext {
-  font-size: large;
+.section:nth-of-type(n + 2) {
+  margin-top: 10px;
 }
 .section-title {
   font-size: x-large;
   font-weight: 600;
   text-align: center;
 }
-.section-title:nth-of-type(n + 2) {
-  margin-top: 20px;
+.sections {
+  width: 80%;
+  margin: auto;
 }
 .text-center {
   color: #535353;
