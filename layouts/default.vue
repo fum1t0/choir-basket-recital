@@ -3,7 +3,6 @@
     <navibar />
     <v-content>
       <nuxt />
-      <v-spacer />
     </v-content>
   </v-app>
 </template>
