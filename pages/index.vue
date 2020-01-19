@@ -123,33 +123,6 @@ export default {
 .header-title .sp-title:last-of-type {
   padding: 23.5px 47px;
 }
-.subtitle {
-  margin: 0 0 40px 0;
-  font-weight: 400;
-  font-size: 40px;
-}
-.position {
-  font-weight: normal;
-  font-size: 20px;
-}
-.names {
-  font-weight: 400;
-  font-size: 30px;
-}
-.pictures {
-  width: 100%;
-  border-radius: 5px;
-  margin: 0 0 15px 0;
-}
-.box {
-  position: relative;
-}
-.active {
-  margin: auto;
-  background-color: orange;
-  position: absolute;
-  top: 0;
-}
 .section:nth-of-type(n + 2) {
   margin-top: 10px;
 }
@@ -161,9 +134,5 @@ export default {
 .sections {
   width: 80%;
   margin: auto;
-}
-.text-center {
-  color: #535353;
-  font-family: Meiryo, sans-serif;
 }
 </style>
