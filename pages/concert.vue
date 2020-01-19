@@ -183,7 +183,7 @@ export default {
   text-align: center;
 }
 .information-title:nth-of-type(n + 2) {
-  padding-top: 15px;
+  padding-top: 25px;
 }
 .information-title {
   padding-bottom: 10px;
