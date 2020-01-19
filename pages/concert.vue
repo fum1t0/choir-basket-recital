@@ -3,8 +3,10 @@
     <v-container fluid>
       <v-img src="headerpic2.png" max-height="500">
         <p class="header-title">
-          <span class="line-break">合唱団ばすけ</span>
-          <span class="line-break">5周年記念演奏会</span>
+          <span class="pc-title hidden-sm-and-down">合唱団ばすけ</span>
+          <span class="sp-title hidden-md-and-up">合唱団ばすけ</span>
+          <br class="hidden-md-and-up stage-title" />
+          <span>5周年記念演奏会</span>
         </p>
       </v-img>
     </v-container>
@@ -106,7 +108,12 @@ export default {
           songs: [
             { title: '鐘鳴りぬ', composer: '多田武彦', lyric: '三好達治' },
             { title: 'さくら散る', composer: '多田武彦', lyric: '草野心平' },
-            { title: '柳川', composer: '多田武彦', lyric: '北原白秋' }
+            { title: '柳川', composer: '多田武彦', lyric: '北原白秋' },
+            {
+              title: '作品第貳拾壹（宇宙線富士）',
+              composer: '多田武彦',
+              lyric: '草野心平'
+            }
           ]
         },
         {
@@ -158,6 +165,9 @@ export default {
   margin: 0;
   padding: 0;
 }
+.header-title .sp-title {
+  padding: 10px 20px;
+}
 .image-title {
   color: #fcfcfc;
   position: absolute;
@@ -197,9 +207,6 @@ export default {
 }
 .line-break {
   display: inline-block;
-}
-.second-stage-card {
-  padding: 0 20%;
 }
 .stage-title {
   padding-bottom: 10px;
