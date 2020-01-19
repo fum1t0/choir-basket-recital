@@ -1,75 +1,173 @@
 <template>
-  <v-layout column justify-center align-center>
-    <v-flex xs12 sm8 md6>
-      <div class="text-center">
-        <logo />
-        <vuetify-logo />
+  <div>
+    <v-container fluid>
+      <v-img
+        src="headerpic1.png"
+        alt="ヘッダー"
+        class="header-img"
+        max-height="500"
+      >
+        <p class="header-title">
+          <span>合唱団ばすけ</span>
+          <br class="hidden-md-and-up" />
+          <span class="pc-title hidden-sm-and-down">とは</span>
+          <span class="sp-title hidden-md-and-up">とは</span>
+        </p>
+      </v-img>
+    </v-container>
+    <v-container>
+      <p class="section-title">団長挨拶</p>
+      <div class="explession othercontents">
+        <img
+          src="../components/figures/basketball.png"
+          alt="バスケットボールだよ"
+          class="pictures"
+        />
+        <p class="extext">
+          合唱団ばすけは、早稲田大学合唱団のOBが集まって結成された男声合唱団です。
+        </p>
+        <p class="extext">
+          主に東京都合唱祭や男声合唱フェスティバル、野外合唱コンサートなどでの演奏を目指して活動しています。
+        </p>
       </div>
-      <v-card>
-        <v-card-title class="headline"
-          >Welcome to the Vuetify + Nuxt.js template</v-card-title
-        >
-        <v-card-text>
-          <p>
-            Vuetify is a progressive Material Design component framework for
-            Vue.js. It was designed to empower developers to create amazing
-            applications.
-          </p>
-          <p>
-            For more information on Vuetify, check out the
-            <a href="https://vuetifyjs.com" target="_blank">documentation</a>.
-          </p>
-          <p>
-            If you have questions, please join the official
-            <a href="https://chat.vuetifyjs.com/" target="_blank" title="chat"
-              >discord</a
-            >.
-          </p>
-          <p>
-            Find a bug? Report it on the github
-            <a
-              href="https://github.com/vuetifyjs/vuetify/issues"
-              target="_blank"
-              title="contribute"
-              >issue board</a
-            >.
-          </p>
-          <p>
-            Thank you for developing with Vuetify and I look forward to bringing
-            more exciting features in the future.
-          </p>
-          <div class="text-xs-right">
-            <em>
-              <small>&mdash; John Leider</small>
-            </em>
+
+      <v-row class="mb-10" justify="center">
+        <v-col xl="12" lg="12" md="12" cols="12">
+          <h1 class="section-title">団員紹介</h1>
+        </v-col>
+        <v-col xl="4" lg="4" md="4" cols="12">
+          <div class="explession">
+            <h2 class="position">団長</h2>
+            <h2 class="names">戸倉しんちゃん</h2>
+            <img
+              src="../components/figures/sin.jpg"
+              alt="とくらさんの画像だよ"
+              class="pictures"
+              id="sin"
+            />
+            <p class="extext">
+              戸倉さんはすごいんだぞウホウホウホウホウホウホウホウホ
+            </p>
           </div>
-          <hr class="my-3" />
-          <a href="https://nuxtjs.org/" target="_blank">Nuxt Documentation</a>
-          <br />
-          <a href="https://github.com/nuxt/nuxt.js" target="_blank"
-            >Nuxt GitHub</a
-          >
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer />
-          <v-btn color="primary" nuxt to="/inspire">Continue</v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-flex>
-  </v-layout>
+        </v-col>
+        <v-col xl="4" lg="4" md="4" cols="12">
+          <div class="explession">
+            <h2 class="position">指揮者</h2>
+            <h2 class="names">川崎えももん</h2>
+            <img
+              src="../components/figures/emo.jpg"
+              alt="えもさんの画像だよ"
+              class="pictures"
+            />
+            <p class="extext">
+              えもさんはすごいんだぞウホウホウホウホウホウホウホウホ
+            </p>
+          </div>
+        </v-col>
+        <v-col xl="4" lg="4" md="4" cols="12">
+          <div class="explession">
+            <h2 class="position">ピアニスト</h2>
+            <h2 class="names">吉田りえ神</h2>
+            <img
+              src="../components/figures/rie.jpg"
+              alt="りえさんの画像だよ"
+              class="pictures"
+            />
+            <p class="extext">りえさんはすごい</p>
+          </div>
+        </v-col>
+      </v-row>
+
+      <v-row class="mb-10" justify="center">
+        <v-col xl="12" lg="12" md="12" cols="12">
+          <div class="explession othercontents">
+            <h1 class="subtitle">連絡先</h1>
+            <img
+              src="../components/figures/postit.jpg"
+              alt="ポストイットだよ"
+              class="pictures"
+            />
+            <p class="extext">
+              これが連絡先だけど団員受け付けてないから連絡してくんなよ
+            </p>
+          </div>
+        </v-col>
+      </v-row>
+    </v-container>
+  </div>
 </template>
 
-<script>
-import Logo from '~/components/Logo.vue'
-import VuetifyLogo from '~/components/VuetifyLogo.vue'
-
-export default {
-  components: {
-    Logo,
-    VuetifyLogo
-  },
-  head() {
-    return { title: 'メインページ' }
-  }
+<style scoped>
+.container--fluid {
+  padding: 0px;
 }
-</script>
+.header-img {
+  margin: 0 0 40px 0;
+}
+.header-title {
+  color: #fcfcfc;
+  font-family: 'M PLUS Rounded 1c';
+  font-weight: 700;
+  font-size: x-large;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
+}
+.header-title .sp-title {
+  padding: 23.5px 47px;
+}
+.subtitle {
+  margin: 0 0 40px 0;
+  font-weight: 400;
+  font-size: 40px;
+}
+.exploession {
+  align-content: center;
+}
+.othercontents {
+  width: 70%;
+  margin: auto;
+}
+.position {
+  font-weight: normal;
+  font-size: 20px;
+}
+.names {
+  font-weight: 400;
+  font-size: 30px;
+}
+.pictures {
+  width: 100%;
+  border-radius: 5px;
+  margin: 0 0 15px 0;
+}
+.box {
+  position: relative;
+}
+.active {
+  margin: auto;
+  background-color: orange;
+  position: absolute;
+  top: 0;
+}
+.extext {
+  font-size: large;
+}
+.section-title {
+  font-size: x-large;
+  font-weight: 600;
+  text-align: center;
+}
+.section-title:nth-of-type(n + 2) {
+  margin-top: 20px;
+}
+.text-center {
+  color: #535353;
+  font-family: Meiryo, sans-serif;
+}
+</style>
