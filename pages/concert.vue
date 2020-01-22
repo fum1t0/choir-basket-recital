@@ -1,34 +1,33 @@
 <template>
   <div>
     <v-container fluid>
-      <v-img src="IMG_1446.jpg" max-height="500">
-        <p class="image-title">
-          <span class="line-break">合唱団ばすけ</span>
-          <span class="line-break">5周年記念演奏会</span>
+      <v-img src="headerpic2.png" max-height="500">
+        <p class="header-title">
+          <span class="pc-title hidden-sm-and-down">合唱団ばすけ</span>
+          <span class="sp-title hidden-md-and-up">合唱団ばすけ</span>
+          <br class="hidden-md-and-up stage-title" />
+          <span>5周年記念演奏会</span>
         </p>
       </v-img>
     </v-container>
     <v-container>
-      <h1 class="main-title">
-        <span class="line-break">合唱団ばすけ</span
-        ><span class="line-break">５周年記念演奏会</span>
-      </h1>
       <v-row>
         <v-col xl="6" lg="6" md="6" cols="12">
           <v-card class="details mb-4" height="100%">
             <v-card-text>
-              <h2>開催日程</h2>
+              <h2 class="information-title">開催日程</h2>
               <div>2020年2月23日</div>
               <p>
                 <span class="pr-2">開場&nbsp;16:00</span
                 ><span>開演&nbsp;16:30</span>
               </p>
-              <h2>会場</h2>
+              <div />
+              <h2 class="information-title">会場</h2>
               <p>
                 <span class="mr-1 line-break">早稲田奉仕園スコットホール</span
                 ><span class="line-break">(東京都新宿区西早稲田2-3-1)</span>
               </p>
-              <h2>アクセス</h2>
+              <h2 class="information-title">アクセス</h2>
               <p class="mb-1">
                 <span class="mr-1 line-break">東京メトロ東西線</span
                 ><span class="line-break">早稲田駅より徒歩5分</span>
@@ -61,22 +60,22 @@
             <v-card-text>
               <h2>プログラム</h2>
               <div
-                class="mb-1"
+                class="mb-1 stage-titles"
                 v-for="stage in stages"
                 :key="stage.stage_title"
               >
-                <h3 class="hidden-sm-and-down">
+                <h3 class="hidden-sm-and-down stage-title">
                   {{ stage.stage_order }}&nbsp;{{ stage.stage_title }}
                 </h3>
-                <h3 class="hidden-md-and-up">
+                <h3 class="hidden-md-and-up stage-title">
                   <div>{{ stage.stage_order }}</div>
                   <div>{{ stage.stage_title }}</div>
                 </h3>
                 <div class="mb-1">
                   <div v-for="song in stage.songs" :key="song.title">
-                    <v-row>
+                    <v-row class="songs">
                       <v-col cols="6" class="pa-1"
-                        ><p>{{ song.title }}</p></v-col
+                        ><p class="song-title">{{ song.title }}</p></v-col
                       >
                       <v-col cols="6" class="pa-1"
                         ><span class="mr-1 line-break"
@@ -93,13 +92,8 @@
           </v-card>
         </v-col>
       </v-row>
+      <v-spacer></v-spacer>
     </v-container>
-    <div class="hidden-md-and-up flyer-sp mt-0 mb-5">
-      <v-img src="recital_flyer.jfif"></v-img>
-    </div>
-    <div class="hidden-sm-and-down flyer-pc mt-0 mb-5">
-      <v-img src="recital_flyer.jfif"></v-img>
-    </div>
   </div>
 </template>
 
@@ -114,7 +108,12 @@ export default {
           songs: [
             { title: '鐘鳴りぬ', composer: '多田武彦', lyric: '三好達治' },
             { title: 'さくら散る', composer: '多田武彦', lyric: '草野心平' },
-            { title: '柳川', composer: '多田武彦', lyric: '北原白秋' }
+            { title: '柳川', composer: '多田武彦', lyric: '北原白秋' },
+            {
+              title: '作品第貳拾壹（宇宙線富士）',
+              composer: '多田武彦',
+              lyric: '草野心平'
+            }
           ]
         },
         {
@@ -152,6 +151,23 @@ export default {
 .container--fluid {
   padding: 0px;
 }
+.header-title {
+  color: #fcfcfc;
+  font-family: 'M PLUS Rounded 1c';
+  font-weight: 700;
+  font-size: x-large;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
+}
+.header-title .sp-title {
+  padding: 10px 20px;
+}
 .image-title {
   color: #fcfcfc;
   position: absolute;
@@ -166,18 +182,14 @@ export default {
 .main-title {
   text-align: center;
 }
+.information-title:nth-of-type(n + 2) {
+  padding-top: 20px;
+}
+.information-title {
+  padding-bottom: 10px;
+}
 .details {
   text-align: center;
-}
-.flyer-pc {
-  margin: 0 auto;
-  width: 40%;
-  height: auto;
-}
-.flyer-sp {
-  margin: 0 auto;
-  width: 80%;
-  height: auto;
 }
 .google-map {
   position: relative;
@@ -196,11 +208,23 @@ export default {
 .line-break {
   display: inline-block;
 }
-.second-stage-card {
-  padding: 0 20%;
+.song-title {
+  word-break: keep-all;
+}
+.stage-title {
+  padding-bottom: 10px;
+}
+.stage-titles:first-of-type {
+  padding-top: 15px;
+}
+.stage-titles {
+  padding-top: 25px;
 }
 ul {
   list-style: none;
   padding: 0;
+}
+.v-application .mb-4 {
+  margin-bottom: 0px !important;
 }
 </style>
