@@ -17,7 +17,7 @@
           >合唱団ばすけ</nuxt-link
         >
       </v-toolbar-title>
-      <v-app-bar-items class="hidden-sm-and-down">
+      <div class="hidden-sm-and-down">
         <v-btn
           v-for="page in linked_pages"
           :key="page.link"
@@ -30,7 +30,7 @@
           color="#000000"
           >{{ page.title.pc }}</v-btn
         >
-      </v-app-bar-items>
+      </div>
     </v-app-bar>
   </span>
 </template>
