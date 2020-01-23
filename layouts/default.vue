@@ -1,6 +1,6 @@
 <template>
   <v-app dark>
-    <navibar />
+    <Navibar />
     <v-content>
       <nuxt />
     </v-content>
