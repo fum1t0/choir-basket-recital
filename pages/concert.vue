@@ -99,6 +99,9 @@
 
 <script>
 export default {
+  head() {
+    return { title: '演奏会のご案内' }
+  },
   data() {
     return {
       stages: [

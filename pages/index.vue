@@ -69,6 +69,9 @@
 
 <script>
 export default {
+  head() {
+    return { title: '合唱団ばすけとは' }
+  },
   data() {
     return {
       mail: 'choirbasuke@gmail.com',
