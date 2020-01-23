@@ -6,7 +6,14 @@
       color="#F54E1B"
       background-color="#FAFAFA"
     >
-      <v-btn v-for="page in linked_pages" :key="page.link" nuxt :to="page.link">
+      <v-btn
+        width="80px"
+        height="56px"
+        v-for="page in linked_pages"
+        :key="page.link"
+        nuxt
+        :to="page.link"
+      >
         <span>{{ page.title.sp }}</span>
         <v-icon>{{ page.icon }}</v-icon>
       </v-btn>
