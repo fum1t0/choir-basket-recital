@@ -27,5 +27,10 @@
   "taskExplorer.enableSideBar": true,
 
   "todo-tree.expanded": true,
-  "todo-tree.includeGlobs": ["**/src/**/*"]
+  "todo-tree.includeGlobs": ["**/src/**/*"],
+  "todo-tree.tree.expanded": true,
+  "todo-tree.filtering.includeGlobs": ["**/src/**/*"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
 }
