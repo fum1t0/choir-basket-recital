@@ -99,6 +99,9 @@
 
 <script>
 export default {
+  head() {
+    return { title: '演奏会のご案内' }
+  },
   data() {
     return {
       stages: [
@@ -106,11 +109,23 @@ export default {
           stage_order: '1st Stage',
           stage_title: '多田武彦男声合唱曲集より',
           songs: [
-            { title: '鐘鳴りぬ', composer: '多田武彦', lyric: '三好達治' },
-            { title: 'さくら散る', composer: '多田武彦', lyric: '草野心平' },
-            { title: '柳川', composer: '多田武彦', lyric: '北原白秋' },
             {
-              title: '作品第貳拾壹（宇宙線富士）',
+              title: '柳河風俗詩 より「柳河」',
+              composer: '多田武彦',
+              lyric: '北原白秋'
+            },
+            {
+              title: 'わがふるき日のうた より「鐘鳴りぬ」',
+              composer: '多田武彦',
+              lyric: '三好達治'
+            },
+            {
+              title: '草野心平の詩から より「さくら散る」',
+              composer: '多田武彦',
+              lyric: '草野心平'
+            },
+            {
+              title: '富士山 より「作品第貳拾壹」',
               composer: '多田武彦',
               lyric: '草野心平'
             }
@@ -120,15 +135,31 @@ export default {
           stage_order: '2nd Stage',
           stage_title: 'アラカルトステージ',
           songs: [
-            { title: '初心のうた', composer: '信長貴富', lyric: '木島始' },
-            { title: 'ブルー', composer: '北川昇', lyric: 'みなづきみのり' },
-            { title: 'みょうが', composer: '新実徳英', lyric: '星野富弘' },
             {
-              title: 'カウボーイ・ポップ',
+              title: 'アイヌのウポポ より「輪舞」',
+              composer: '清水脩',
+              lyric: '近藤鏡二郎'
+            },
+            {
+              title: '心の翼 より「ブルー」',
+              composer: '北川昇',
+              lyric: 'みなづきみのり'
+            },
+            {
+              title: '花に寄せて より「みょうが」',
+              composer: '新実徳英',
+              lyric: '星野富弘'
+            },
+            {
+              title: 'カウボーイ・ポップ より「カウボーイ・ポップ」',
               composer: '信長貴富',
               lyric: '寺山修司'
             },
-            { title: '輪舞', composer: '清水脩', lyric: '近藤鏡二郎' }
+            {
+              title: '初心のうた より「初心のうた」',
+              composer: '信長貴富',
+              lyric: '木島始'
+            }
           ]
         },
         {
