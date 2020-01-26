@@ -4,7 +4,7 @@
       app
       class="hidden-md-and-up"
       color="#F54E1B"
-      background-color="#FAFAFA"
+      background-color="#121221"
     >
       <v-btn
         width="80px"
@@ -18,7 +18,7 @@
         <v-icon>{{ page.icon }}</v-icon>
       </v-btn>
     </v-bottom-navigation>
-    <v-app-bar clipped-left fixed app color="#FAFAFA">
+    <v-app-bar clipped-left fixed app color="#121221">
       <v-toolbar-title>
         <nuxt-link to="/" class="toolbar-title" color="#000000"
           >合唱団ばすけ</nuxt-link
@@ -34,7 +34,7 @@
           large
           rounded
           class="toolbar-title"
-          color="#000000"
+          color="#fafafa"
           >{{ page.title.pc }}</v-btn
         >
       </div>
@@ -72,7 +72,7 @@ export default {
 
 <style scoped>
 .toolbar-title {
-  color: #000000;
+  color: #fafafa;
   font-weight: 400;
   text-decoration: none;
   padding-left: 0%;

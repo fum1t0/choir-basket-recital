@@ -13,7 +13,7 @@
     <v-container>
       <v-row>
         <v-col xl="6" lg="6" md="6" cols="12">
-          <v-card class="details mb-4" height="100%">
+          <v-card class="details mb-4" color="#232340" height="100%">
             <v-card-text>
               <h2 class="information-title">開催日程</h2>
               <div>2020年2月23日</div>
@@ -56,7 +56,7 @@
           </v-card>
         </v-col>
         <v-col xl="6" lg="6" md="6" cols="12">
-          <v-card class="details mb-4" height="100%">
+          <v-card class="details mb-4" color="#232340" height="100%">
             <v-card-text>
               <h2>プログラム</h2>
               <div

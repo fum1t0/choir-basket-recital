@@ -18,10 +18,13 @@ export default {
 </script>
 
 <style>
+body {
+  background: #121221;
+}
 .v-application {
   font-family: 'M PLUS Rounded 1c';
 }
 .v-application.theme--dark {
-  background-color: #fafafa;
+  background-color: #121221;
 }
 </style>

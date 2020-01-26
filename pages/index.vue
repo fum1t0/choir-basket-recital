@@ -44,7 +44,7 @@
           v-for="member in members"
           :key="member.name"
         >
-          <v-card height="100%">
+          <v-card color="#232340" height="100%">
             <v-img :src="member.img" />
             <v-card-title>{{ member.name }}</v-card-title>
             <v-card-subtitle>{{ member.position }}</v-card-subtitle>
