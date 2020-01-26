@@ -21,7 +21,8 @@ export default {
 .v-application {
   font-family: 'M PLUS Rounded 1c';
 }
-.v-application.theme--light {
-  background-color: #fafafa;
+.v-application.theme--dark {
+  background-color: #e64a19;
+  color: #fafafa;
 }
 </style>

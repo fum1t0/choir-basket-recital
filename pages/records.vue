@@ -15,7 +15,7 @@
           md="6"
           cols="12"
         >
-          <v-card>
+          <v-card color="#FF6E40">
             <v-card-title>{{ videoInfo.title }}</v-card-title>
             <v-card-subtitle>{{ videoInfo.subtitle }}</v-card-subtitle>
             <v-card-text>

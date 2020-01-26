@@ -2,9 +2,10 @@
   <span>
     <v-bottom-navigation
       app
+      dark
       class="hidden-md-and-up"
-      color="#F54E1B"
-      background-color="#FAFAFA"
+      color="#FAFAFA"
+      background-color="#E64A19"
     >
       <v-btn
         width="80px"
@@ -18,15 +19,14 @@
         <v-icon>{{ page.icon }}</v-icon>
       </v-btn>
     </v-bottom-navigation>
-    <v-app-bar clipped-left fixed app color="#FAFAFA">
+    <v-app-bar dark clipped-left fixed app color="#E64A19">
       <v-toolbar-title>
-        <nuxt-link to="/" class="toolbar-title" color="#000000"
-          >合唱団ばすけ</nuxt-link
-        >
+        <nuxt-link to="/" class="toolbar-title">合唱団ばすけ</nuxt-link>
       </v-toolbar-title>
       <div class="hidden-sm-and-down">
         <v-btn
           v-for="page in linked_pages"
+          dark
           :key="page.link"
           :to="page.link"
           text
@@ -34,7 +34,7 @@
           large
           rounded
           class="toolbar-title"
-          color="#000000"
+          color="#FAFAFA"
           >{{ page.title.pc }}</v-btn
         >
       </div>
@@ -72,7 +72,7 @@ export default {
 
 <style scoped>
 .toolbar-title {
-  color: #000000;
+  color: #fafafa;
   font-weight: 400;
   text-decoration: none;
   padding-left: 0%;
