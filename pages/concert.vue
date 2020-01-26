@@ -13,7 +13,7 @@
     <v-container>
       <v-row>
         <v-col xl="6" lg="6" md="6" cols="12">
-          <v-card class="details mb-4" height="100%">
+          <v-card class="details mb-4" color="#1438CC" height="100%">
             <v-card-text>
               <h2 class="information-title">開催日程</h2>
               <div>2020年2月23日</div>
@@ -37,7 +37,7 @@
                 <span class="mr-1 line-break">東京メトロ副都心線</span
                 ><span class="line-break">西早稲田駅より徒歩8分</span>
               </p>
-              <a href="https://www.hoshien.or.jp/"
+              <a class="link-text" href="https://www.hoshien.or.jp/"
                 >https://www.hoshien.or.jp/</a
               >
               <v-card>
@@ -56,7 +56,7 @@
           </v-card>
         </v-col>
         <v-col xl="6" lg="6" md="6" cols="12">
-          <v-card class="details mb-4" height="100%">
+          <v-card class="details mb-4" color="#12B32D" height="100%">
             <v-card-text>
               <h2>プログラム</h2>
               <div
@@ -257,5 +257,8 @@ ul {
 }
 .v-application .mb-4 {
   margin-bottom: 0px !important;
+}
+.link-text {
+  color: #ff80ab;
 }
 </style>

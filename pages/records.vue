@@ -15,7 +15,7 @@
           md="6"
           cols="12"
         >
-          <v-card>
+          <v-card :color="videoInfo.color">
             <v-card-title>{{ videoInfo.title }}</v-card-title>
             <v-card-subtitle>{{ videoInfo.subtitle }}</v-card-subtitle>
             <v-card-text>
@@ -51,47 +51,56 @@ export default {
         {
           id: 'mAkZT5KPuiI',
           title: 'かもめ',
-          subtitle: '作詩：中勘助　作曲：多田武彦'
+          subtitle: '作詩：中勘助　作曲：多田武彦',
+          color: '#1438CC'
         },
         {
           id: 'uafxh1cn_t4',
           title: '北の海鳥',
-          subtitle: '作詩：更科源蔵　作曲：廣瀬量平'
+          subtitle: '作詩：更科源蔵　作曲：廣瀬量平',
+          color: '#12B32D'
         },
         {
           id: 'kFu_x_cw9n0',
           title: 'エトピリカ',
-          subtitle: '作詩：更科源蔵　作曲：廣瀬量平'
+          subtitle: '作詩：更科源蔵　作曲：廣瀬量平',
+          color: '#14C2CC'
         },
         {
           id: 'Ligje2YhazU',
           title: '波乗りジョニー',
-          subtitle: '作詩：桑田佳祐　編曲：野呂洸碩'
+          subtitle: '作詩：桑田佳祐　編曲：野呂洸碩',
+          color: '#D200FF'
         },
         {
           id: 'LLbl0W2QOTk',
           title: '新しい時代に',
-          subtitle: '作詩：丸山薫　作曲：信長貴富'
+          subtitle: '作詩：丸山薫　作曲：信長貴富',
+          color: '#14CC8D'
         },
         {
           id: 'wf5Oo0WvXbk',
           title: '川よとわに美しく',
-          subtitle: '作詩：米田栄作　作曲：三枝成彰'
+          subtitle: '作詩：米田栄作　作曲：三枝成彰',
+          color: '#4500FF'
         },
         {
           id: 'Xl40kp20RrM',
           title: '夏の終わり',
-          subtitle: '作詩：森山直太朗 / 御徒町凪　編曲：田中達也'
+          subtitle: '作詩：森山直太朗 / 御徒町凪　編曲：田中達也',
+          color: '#8100FF'
         },
         {
           id: 'ZxNcJS6T_EA',
           title: '数珠かけ鳩',
-          subtitle: '作詩：北原白秋　作曲：多田武彦'
+          subtitle: '作詩：北原白秋　作曲：多田武彦',
+          color: '#14CC54'
         },
         {
           id: 'Sqv-Yf-ehz0',
           title: '黎明',
-          subtitle: '作詩：北原白秋　作曲：多田武彦'
+          subtitle: '作詩：北原白秋　作曲：多田武彦',
+          color: '#009DFF'
         }
       ]
     }

@@ -44,7 +44,7 @@
           v-for="member in members"
           :key="member.name"
         >
-          <v-card height="100%">
+          <v-card :color="member.color" height="100%">
             <v-img :src="member.img" />
             <v-card-title>{{ member.name }}</v-card-title>
             <v-card-subtitle>{{ member.position }}</v-card-subtitle>
@@ -58,7 +58,7 @@
           <p class="section-title">連絡先</p>
           <p>
             連絡は
-            <a :href="'mailto:' + mail">{{ mail }}</a>
+            <a class="link-text" :href="'mailto:' + mail">{{ mail }}</a>
             にお願いします。
           </p>
         </v-col>
@@ -81,21 +81,24 @@ export default {
           img: 'sin.jpg',
           position: '団長',
           about:
-            '独特の空気でばすけの雰囲気を作ってくれる団長。歌の安定感は超一流。滑り笑いの安定感も超一流。'
+            '独特の空気でばすけの雰囲気を作ってくれる団長。歌の安定感は超一流。滑り笑いの安定感も超一流。',
+          color: '#1438CC'
         },
         {
           name: '川崎萌子',
           img: 'emo.jpg',
           position: '指揮者',
           about:
-            '普段見せるのほほんとした顔とは一変、指揮をする姿は俊敏でパワフル。歌声も指揮も食べっぷりも元気もりもり。'
+            '普段見せるのほほんとした顔とは一変、指揮をする姿は俊敏でパワフル。歌声も指揮も食べっぷりも元気もりもり。',
+          color: '#12B32D'
         },
         {
           name: '吉田梨絵',
           img: 'rie.jpg',
           position: 'ピアニスト',
           about:
-            '合唱団の天使！そのピアノの音色を聞けばあなたもりえちゃんのとりこに？'
+            '合唱団の天使！そのピアノの音色を聞けばあなたもりえちゃんのとりこに？',
+          color: '#4700CC'
         }
       ]
     }
@@ -126,6 +129,9 @@ export default {
 }
 .header-title .sp-title:last-of-type {
   padding: 23.5px 47px;
+}
+.link-text {
+  color: #8aff19;
 }
 .section:nth-of-type(n + 2) {
   margin-top: 10px;

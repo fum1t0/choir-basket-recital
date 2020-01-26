@@ -2,9 +2,10 @@
   <span>
     <v-bottom-navigation
       app
+      dark
       class="hidden-md-and-up"
-      color="#F54E1B"
-      background-color="#FAFAFA"
+      color="#FAFAFA"
+      background-color="#FF3D00"
     >
       <v-btn
         width="80px"
@@ -18,15 +19,14 @@
         <v-icon>{{ page.icon }}</v-icon>
       </v-btn>
     </v-bottom-navigation>
-    <v-app-bar clipped-left fixed app color="#FAFAFA">
+    <v-app-bar dark clipped-left fixed app color="#FF3D00">
       <v-toolbar-title>
-        <nuxt-link to="/" class="toolbar-title" color="#000000"
-          >合唱団ばすけ</nuxt-link
-        >
+        <nuxt-link to="/" class="toolbar-title">合唱団ばすけ</nuxt-link>
       </v-toolbar-title>
       <div class="hidden-sm-and-down">
         <v-btn
           v-for="page in linked_pages"
+          dark
           :key="page.link"
           :to="page.link"
           text
@@ -34,7 +34,7 @@
           large
           rounded
           class="toolbar-title"
-          color="#000000"
+          color="#FAFAFA"
           >{{ page.title.pc }}</v-btn
         >
       </div>
@@ -51,17 +51,20 @@ export default {
         {
           title: { pc: '合唱団ばすけとは', sp: 'about' },
           link: '/',
-          icon: 'mdi-basketball'
+          icon: 'mdi-basketball',
+          color: '#1438CC'
         },
         {
           title: { pc: '演奏会のご案内', sp: 'concert' },
           link: '/concert',
-          icon: 'mdi-music-clef-treble'
+          icon: 'mdi-music-clef-treble',
+          color: '#12B32D'
         },
         {
           title: { pc: '過去の演奏', sp: 'records' },
           link: '/records',
-          icon: 'mdi-youtube'
+          icon: 'mdi-youtube',
+          color: '#4700CC'
         }
       ],
       drawer: null
@@ -72,7 +75,7 @@ export default {
 
 <style scoped>
 .toolbar-title {
-  color: #000000;
+  color: #fafafa;
   font-weight: 400;
   text-decoration: none;
   padding-left: 0%;
