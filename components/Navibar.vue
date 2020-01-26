@@ -5,7 +5,7 @@
       dark
       class="hidden-md-and-up"
       color="#FAFAFA"
-      background-color="#E64A19"
+      background-color="#CC4116"
     >
       <v-btn
         width="80px"
@@ -19,7 +19,7 @@
         <v-icon>{{ page.icon }}</v-icon>
       </v-btn>
     </v-bottom-navigation>
-    <v-app-bar dark clipped-left fixed app color="#E64A19">
+    <v-app-bar dark clipped-left fixed app color="#CC4116">
       <v-toolbar-title>
         <nuxt-link to="/" class="toolbar-title">合唱団ばすけ</nuxt-link>
       </v-toolbar-title>
